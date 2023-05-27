@@ -1,2 +1,11 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<h1>Fun Tours Home Page</h1>
+<ul>
+  <li><a href="/">Home</a></li>
+  <li><a href="/about">About Us</a></li>
+  <li><a href="/destinations">Destinations</a></li>
+  <li><a href="/membership">Membership</a></li>
+  <li><a href="/schedule">Schedule</a></li>
+  <li><a href="/buses">Our Buses</a></li>
+  <li></li>
+  <li></li>
+</ul>
