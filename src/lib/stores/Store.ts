@@ -64,6 +64,20 @@ const destinations: Array<Destination> = [
   },
 ]
 
+const bookings: Array<Destination> = []
+
+// BookingStore actions
+function createBookings() {
+  const { subscribe, set, update } = writable(bookings);
+
+  return {
+    subscribe,
+    add: (booking: Destination) => update(bookings => [...bookings, booking]),
+    remove: (id: number) => update(bookings => bookings.filter(booking => booking.id !== id))
+  };
+}
+
+// DestinationStore actions
 function getDestinationById(id: number) {
   return destinations.find(destination => destination.id === id);
 }
@@ -78,3 +92,4 @@ function createDestinations() {
 }
 
 export const DestinationStore = createDestinations();
+export const BookingStore = createBookings();
