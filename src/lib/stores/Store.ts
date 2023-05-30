@@ -72,10 +72,13 @@ function createBookings() {
 
   return {
     subscribe,
-    add: (booking: Destination) => update(bookings => [...bookings, booking]),
-    remove: (id: number) => update(bookings => bookings.filter(booking => booking.id !== id))
+    add: (booking: Destination) => update(bookings => {
+      return [...bookings, booking]
+    }),
+    remove: (id: number) => update(bookings => bookings.filter(booking => booking.id !== id)),
   };
 }
+
 
 // DestinationStore actions
 function getDestinationById(id: number) {
@@ -89,6 +92,12 @@ function createDestinations() {
 		subscribe,
     byId: (id: number) => getDestinationById(id)
 	};
+}
+
+// BookingStore actions
+function bookingsTotal() {
+  if (bookings.length === 0) return 0;
+  return bookings.reduce((total, booking) => total + booking.price, 0);
 }
 
 export const DestinationStore = createDestinations();
