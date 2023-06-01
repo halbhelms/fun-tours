@@ -22,7 +22,7 @@
 
 <style>
   main {
-    position: fixed;
+    position: absolute;
     top: 0;
     right: 20px;
     font-family: 'Roboto', sans-serif;
