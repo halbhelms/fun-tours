@@ -7,6 +7,8 @@
     console.log('clicked')
     document.querySelector('#cart-items').classList.toggle('expandable')
   }
+
+  $: total = $BookingStore.reduce((acc, curr) => acc + curr.price, 0)
 </script>
 
 <main>
@@ -17,6 +19,7 @@
         <p>{destination.destination} : ${destination.price}</p>
       </li>
     {/each}
+    <p>Total: ${total}</p>
 
 </main>
 
