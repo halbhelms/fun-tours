@@ -1,5 +1,6 @@
 <script lang="ts">
   import { BookingStore } from '$lib/stores/Store'
+  import CartComponent from '$lib/components/CartComponent.svelte'
 
   // Watch the bookings store and update the total() method whenever it changes.
   $: total = $BookingStore.reduce((acc, curr) => acc + curr.price, 0)
@@ -8,8 +9,9 @@
 
 <nav>
   <a href="/destinations">&lt;&nbsp; Destinations</a>
-  <p>Items in Cart: {$BookingStore.length}</p>
-  <p>Amount: {total}</p>
+  <!-- <p>Items in Cart: {$BookingStore.length}</p> -->
+  <!-- <p>Amount: {total}</p> -->
+  <CartComponent></CartComponent>
 </nav>
 
 <slot />
